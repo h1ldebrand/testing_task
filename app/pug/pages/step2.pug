@@ -1,0 +1,45 @@
+extends ../layout/step2-layout
+
+block title
+	| Главная страница
+
+block content
+	.order(data-page="step2")
+		.order__item
+				h2.order__title Shipping information
+				.order__shipping-info
+					.order__address
+						.order__address-info
+							.order__info Taras Shevchenko
+							.order__info Unit 2 Green Mount Park
+							.order__info Halifax
+							.order__info HX1 5QN
+							.order__info Phone: +3 8097 132-45-67
+						.order__address-link
+							a.order__link(href="javascript:void(0)") Edit Address
+							a.order__link(href="javascript:void(0)") Add New
+					.order__map#map
+				h2.order__title Shipping method
+				form.order-step#step-2
+					.order-step__method-container
+						.order-step__method
+							label.order-step__method-inner
+								input.order-step__radio(type="radio" name="delivery" value="standart")
+								span.new-radio
+									span.new-radio__check
+								span.order-step__price Free
+								h3.order-step__method-title Standart Delivery
+								p.order-step__descr.
+									Freebie checkout form of the third step in sketchapp. Feel free to download and use it for your project.
+						.order-step__method
+							label.order-step__method-inner.order-step__method-inner_even
+								input.order-step__radio(type="radio" name="delivery" value="fast")
+								span.new-radio
+									span.new-radio__check
+								span.order-step__price 8.00 uah
+								h3.order-step__method-title Fast Delivery
+								p.order-step__descr.
+									Freebie checkout form of the third step in sketchapp. Feel free to download and use it for your project.
+					.button
+						button.button__link(type="submit" disabled) Continue to Payment
+						a(href="/").button__return Back to Customer Info

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE = edge">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>Главная страница
+    </title>
+    <link rel="stylesheet" href="css/libs.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div class="form-order">
+      <div class="tabs">
+        <ul class="tabs__list">
+          <li class="tabs__item page-step1">
+            <div class="tabs__name">01 Customer info</div>
+          </li>
+          <li class="tabs__item page-step2">
+            <div class="tabs__name">02 Shipping info</div>
+          </li>
+          <li class="tabs__item page-step3">
+            <div class="tabs__name">03 Payment selection</div>
+          </li>
+        </ul>
+      </div>
+      <div class="order" data-page="step2">
+        <div class="order__item">
+          <h2 class="order__title">Shipping information</h2>
+          <div class="order__shipping-info">
+            <div class="order__address">
+              <div class="order__address-info">
+                <div class="order__info">Taras Shevchenko</div>
+                <div class="order__info">Unit 2 Green Mount Park</div>
+                <div class="order__info">Halifax</div>
+                <div class="order__info">HX1 5QN</div>
+                <div class="order__info">Phone: +3 8097 132-45-67</div>
+              </div>
+              <div class="order__address-link"><a class="order__link" href="javascript:void(0)">Edit Address</a><a class="order__link" href="javascript:void(0)">Add New</a></div>
+            </div>
+            <div class="order__map" id="map"></div>
+          </div>
+          <h2 class="order__title">Shipping method</h2>
+          <form class="order-step" id="step-2">
+            <div class="order-step__method-container">
+              <div class="order-step__method">
+                <label class="order-step__method-inner">
+                  <input class="order-step__radio" type="radio" name="delivery" value="standart"><span class="new-radio"><span class="new-radio__check"></span></span><span class="order-step__price">Free</span>
+                  <h3 class="order-step__method-title">Standart Delivery</h3>
+                  <p class="order-step__descr">Freebie checkout form of the third step in sketchapp. Feel free to download and use it for your project.</p>
+                </label>
+              </div>
+              <div class="order-step__method">
+                <label class="order-step__method-inner order-step__method-inner_even">
+                  <input class="order-step__radio" type="radio" name="delivery" value="fast"><span class="new-radio"><span class="new-radio__check"></span></span><span class="order-step__price">8.00 uah</span>
+                  <h3 class="order-step__method-title">Fast Delivery</h3>
+                  <p class="order-step__descr">Freebie checkout form of the third step in sketchapp. Feel free to download and use it for your project.</p>
+                </label>
+              </div>
+            </div>
+            <div class="button">
+              <button class="button__link" type="submit" disabled>Continue to Payment</button><a class="button__return" href="/">Back to Customer Info</a>
+            </div>
+          </form>
+        </div>
+      </div>
+      <footer class="footer"></footer>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/plugins.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/map.google.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkatyKu49O76Aao49SWVRIiIdInaepvEs&amp;callback=initMap" async="" defer=""></script>
+  </body>
+</html>

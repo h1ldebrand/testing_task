@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE = edge">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>Главная страница
+    </title>
+    <link rel="stylesheet" href="css/libs.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div class="form-order">
+      <div class="tabs">
+        <ul class="tabs__list">
+          <li class="tabs__item page-step1">
+            <div class="tabs__name">01 Customer info</div>
+          </li>
+          <li class="tabs__item page-step2">
+            <div class="tabs__name">02 Shipping info</div>
+          </li>
+          <li class="tabs__item page-step3">
+            <div class="tabs__name">03 Payment selection</div>
+          </li>
+        </ul>
+      </div>
+      <div class="order" data-page="step1">
+        <div class="order__item">
+          <h2 class="order__title">Customer information</h2>
+          <form class="order-step" id="step-1">
+            <div class="order-step__input-container">
+              <label class="order-step__label order-step__label_left"><span class="order-step__name">first name</span>
+                <input class="order-step__field" type="text" name="firstname" data-check="firstname">
+              </label>
+              <label class="order-step__label order-step__label_right"><span class="order-step__name">last name</span>
+                <input class="order-step__field" type="text" name="lastname">
+              </label>
+              <label class="order-step__label order-step__label_full"><span class="order-step__name">address</span>
+                <input class="order-step__field" type="text" name="address">
+              </label>
+              <label class="order-step__label country order-step__label_left"><span class="order-step__name">country</span>
+                <input class="order-step__field" type="text" name="country">
+              </label>
+              <label class="order-step__label order-step__label_right"><span class="order-step__name">sity</span>
+                <input class="order-step__field" type="text" name="sity">
+              </label>
+              <label class="order-step__label order-step__label_left"><span class="order-step__name">postal code</span>
+                <div class="input-wrap">
+                  <input class="order-step__field" type="text" name="postalcode">
+                  <button class="button-inside">Find</button>
+                </div>
+              </label>
+              <label class="order-step__label order-step__label_right"><span class="order-step__name">phone</span>
+                <input class="order-step__field" type="tel" name="phone" data-check="phone">
+              </label>
+            </div>
+            <div class="button">
+              <button class="button__link" type="submit" disabled>Continue to shipping</button><a class="button__return" href="javascript:void(0)">Return to shop</a>
+            </div>
+          </form>
+        </div>
+      </div>
+      <footer class="footer"></footer>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/plugins.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

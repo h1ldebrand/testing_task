@@ -1,0 +1,21 @@
+{
+  "name": "FN-Template",
+  "description": "start template for create web project",
+  "main": "index.js",
+  "authors": [
+    "Vadim Semenchuk <pro100_developer@ukr.net>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "normalize.css#^6.0.0",
+    "jquery.maskedinput": "jquery-maskedinput#^1.4.1",
+  }
+}

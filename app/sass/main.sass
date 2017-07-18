@@ -1,0 +1,60 @@
+// Подключаем переменные
+@import 'feature/vars'
+
+// Подключаем миксины
+@import 'feature/mixins'
+
+// Подключаем шрифты
+@import 'fonts/fonts'
+
+html
+	box-sizing: border-box
+	font-size: 16px
+	font-family: "Arial", sans-serif
+
+body
+	margin: 0
+	padding: 0
+	height: 100%
+
+
+*, *:before, *:after
+	box-sizing: inherit
+
+h1, h2, h3, h4, h5, h6
+	margin: 0
+	padding: 0
+
+p
+	margin: 0
+	line-height: 1.5
+
+
+ul
+	list-style-type: none
+	margin: 0
+	padding: 0
+
+.form-order
+	padding: 50px 60px
+
+// Подключаем спрайты (просто раскоментируем импорт при появлении PNG спрайтов)
+// @import 'sprite/sprite'
+
+// Стили шапки
+@import 'modules/header'
+
+// Стили меню
+// @import 'modules/menu'
+
+// Стили главной страницы
+@import 'page/index'
+
+// Стили футера
+@import 'modules/footer'
+
+// Стили мобильного меню
+@import 'modules/form_validate'
+
+
+

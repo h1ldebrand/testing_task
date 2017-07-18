@@ -1,0 +1,152 @@
+// Clearfix
+@mixin clearfix() {
+		&:before,
+		&:after {
+				content: "";
+				display: table;
+		}
+		&:after {
+				clear: both;
+		}
+}
+
+// Псевдо
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+	content: $content;
+	display: $display;
+	position: $pos;
+}
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff ttf svg) {
+	$src: null;
+
+	$extmods: (
+		eot: "?",
+		svg: "#" + str-replace($name, " ", "_")
+	);
+
+	$formats: (
+		otf: "opentype",
+		ttf: "truetype"
+	);
+
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+}
+
+// Стили шрифта PlayfairDisplay-Bold
+@mixin PlayfairDisplay-Bold($size: false, $colour: false, $weight: false,  $lh: false) {
+	font-family: 'PlayfairDisplay-Bold', Helvetica, Arial, sans-serif;
+	@if $size { font-size: $size; }
+	@if $colour { color: $colour; }
+	@if $weight { font-weight: $weight; }
+	@if $lh { line-height: $lh; }
+}
+// Стили шрифта Gotham-Light
+@mixin Gotham-Light($size: false, $colour: false, $weight: false,  $lh: false) {
+	font-family: 'Gotham-Light', Helvetica, Arial, sans-serif;
+	@if $size { font-size: $size; }
+	@if $colour { color: $colour; }
+	@if $weight { font-weight: $weight; }
+	@if $lh { line-height: $lh; }
+}
+
+//Медиа-запросы
+$breakpoints: (
+	"phone":        400px,
+	"phone-wide":   480px,
+	"phablet":      560px,
+	"tablet-small": 640px,
+	"tablet":       768px,
+	"tablet-wide":  1024px,
+	"desktop":      1248px,
+	"desktop-wide": 1440px
+);
+@mixin media($width, $type: max) {
+	@if map_has_key($breakpoints, $width) {
+	 $width: map_get($breakpoints, $width);
+	 @if $type == max {
+		$width: $width - 0;
+	 }
+	 @media only screen and (#{$type}-width: $width) {
+		@content;
+	 }
+	}
+	@else {
+		@media only screen and (#{$type}-width: $width) {
+		@content;
+	 }
+	}
+}
+
+
+// //Ограничение длины текста
+@mixin truncate($truncation-boundary) {
+	max-width: $truncation-boundary;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+// CSS треугольники
+@mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false){
+	@include pseudo($pos: $position);
+	width: 0;
+	height: 0;
+	@if $round {
+		border-radius: 3px;
+	}
+	@if $direction == down {
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-top: $size solid $color;
+		margin-top: 0 - round( $size / 2.5 );
+	} @else if $direction == up {
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-bottom: $size solid $color;
+		margin-bottom: 0 - round( $size / 2.5 );
+	} @else if $direction == right {
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-left: $size solid $color;
+		margin-right: -$size;
+	} @else if  $direction == left {
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-right: $size solid $color;
+		margin-left: -$size;
+	}
+}
+
+@mixin placeholder {
+	::-webkit-input-placeholder {@content}
+	:-moz-placeholder           {@content}
+	::-moz-placeholder          {@content}
+	:-ms-input-placeholder      {@content}  
+}
+
+// Переводим px в rem
+@function rem($px){
+	@return $px / 16px + 0rem;
+}
+
+// Центрируем елемент
+@mixin center(){
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}

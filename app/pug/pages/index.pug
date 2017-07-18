@@ -1,0 +1,37 @@
+extends ../layout/main
+
+block title
+	| Главная страница
+
+block content
+	.order(data-page="step1")
+			.order__item
+				h2.order__title Customer information
+				form.order-step#step-1
+					.order-step__input-container
+						label.order-step__label.order-step__label_left
+							span.order-step__name first name
+							input.order-step__field(type="text" name="firstname" data-check="firstname")
+						label.order-step__label.order-step__label_right
+							span.order-step__name last name
+							input.order-step__field(type="text" name="lastname")
+						label.order-step__label.order-step__label_full
+							span.order-step__name address
+							input.order-step__field(type="text" name="address")
+						label.order-step__label.country.order-step__label_left
+							span.order-step__name country
+							input.order-step__field(type="text" name="country")
+						label.order-step__label.order-step__label_right
+							span.order-step__name sity
+							input.order-step__field(type="text" name="sity")
+						label.order-step__label.order-step__label_left
+							span.order-step__name postal code
+							.input-wrap
+								input.order-step__field(type="text" name="postalcode")
+								button.button-inside Find
+						label.order-step__label.order-step__label_right
+							span.order-step__name phone
+							input.order-step__field(type="tel" name="phone" data-check="phone")
+					.button
+						button.button__link(type="submit" disabled) Continue to shipping
+						a(href="javascript:void(0)").button__return Return to shop
