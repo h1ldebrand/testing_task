@@ -1,7 +1,6 @@
 .tabs
 	display: table
 	max-width: 1430px
-	min-width: 650px
 	margin: auto
 	+media(992px)
 		display: block
@@ -19,6 +18,8 @@
 	padding: 50px 30px
 	+media(992px)
 		display: none
+	+media('tablet')
+			padding: 40px 20px
 	&.active
 		border-bottom: 2px solid $active-border
 		+media(992px)
@@ -32,4 +33,10 @@
 	font-size: rem(27px)
 	text-transform: uppercase
 	color: $unactive-color
+	+media("desktop")
+		font-size: rem(25px)
+	+media("tablet")
+		font-size: rem(23px)
+	+media("phone-wide")
+		font-size: rem(20px)
 
